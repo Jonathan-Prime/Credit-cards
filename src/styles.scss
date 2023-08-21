@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --background-color: #e0e0e0;
+    --color-font: #2b2b2b;
+    --white: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color) !important;
+    font-size: 13px !important;
+    color: var(--color-font) !important;
+    overflow-x: hidden !important;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.6em 0;
+}
