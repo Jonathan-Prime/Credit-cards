@@ -45,7 +45,7 @@ jobs:
       - name: Install Dependencies
         run: npm i @angular/cli @angular-devkit/build-angular @angular/compiler-cli typescript --save-prod --no-audit --no-fund --omit=optional
       - name: Build Client
-        run: ng build
+        run: npm run build -- --prod
       - name: Deploy Client to Heroku
         uses: akhileshns/heroku-deploy@v3.12.13
         with:
