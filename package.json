@@ -4,11 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --aot -prod",
-    "heroku-postbuild": "ng build",
+    "build": "ng build --prod",
+    "heroku-postbuild": "ng build --prod",
+    "postinstall": "ng build --prod",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "postinstall": "ng build --aot -prod"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
