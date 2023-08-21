@@ -3,10 +3,13 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build --prod",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "build:stats": "ng build --stats-json",
+    "analyze": "npm run build:stats && webpack-bundle-analyzer dist/stats.json"
   },
   "private": true,
   "dependencies": {

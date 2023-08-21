@@ -43,7 +43,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci --no-audit --no-fund --omit=optional
       - name: Build Client
-        run: ng build --prod
+        run: ng build
       - name: Deploy Client to Heroku
         uses: akhileshns/heroku-deploy@v3.12.13
         with:
