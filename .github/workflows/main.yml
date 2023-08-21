@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: 18.16.0
       - name: Install Dependencies
-        run: npm ci @angular/cli @angular-devkit/build-angular @angular/compiler-cli typescript --save-prod --no-audit --no-fund --omit=optional
+        run: npm i @angular/cli @angular-devkit/build-angular @angular/compiler-cli typescript --save-prod --no-audit --no-fund --omit=optional
       - name: Build Client
         run: ng build
       - name: Deploy Client to Heroku
