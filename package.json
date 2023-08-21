@@ -3,13 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
-    "build": "npm install -g @angular/cli @angular/compiler-cli typescript",
+    "start": "ng serve",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "build:stats": "ng build --stats-json",
-    "analyze": "npm run build:stats && webpack-bundle-analyzer dist/stats.json"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
