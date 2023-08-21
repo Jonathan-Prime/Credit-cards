@@ -1,0 +1,25 @@
+button {
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  height: 50px;
+  width: 90px;
+}
+button {
+  &.yellow {
+    background: var(--yellow);
+    &:is(:disabled) {
+      background-color: lighten(var(--yellow), 10);
+    }
+  }
+}
+button {
+  &.gray {
+    background: var(--gray);
+    &:is(:disabled) {
+      background-color: lighten(var(--gray), 90);
+    }
+  }
+}
