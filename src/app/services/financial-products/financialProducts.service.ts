@@ -12,26 +12,25 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class FinancialProductService {
-  private baseURL: string = `${environment.apiBaseBP}/bp/products/`;
   private authorId = `${environment.authorId}`;
+  private apiBaseBP = `${environment.apiBaseBP}`;
 
   constructor(
     private httpClient: HttpClient,
     private financialProductsListService: ListadoProductosFinancierosService,
     private router: Router
   ) {}
-
-  createProductoFinanciero(financialProduct: FinancialProductsModel) {
+  createProductoFinanciero(productoFinancieroDTO: FinancialProductsModel) {
     const headers = new HttpHeaders({
       authorId: this.authorId,
-      'Content-Type': 'text/plain;charset=UTF-8',
+      'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     });
-
-    return this.httpClient
+  
+    this.httpClient
       .post<FinancialProductsModel>(
-        this.baseURL,
-        financialProduct,
+        `${this.apiBaseBP}/bp/products/`,
+        productoFinancieroDTO,
         { headers }
       )
       .pipe(
@@ -43,18 +42,18 @@ export class FinancialProductService {
       )
       .subscribe();
   }
-
-  updateProductoFinanciero(financialProduct: FinancialProductsModel) {
+  
+  updateProductoFinanciero(productoFinancieroDTO: FinancialProductsModel) {
     const headers = new HttpHeaders({
       authorId: this.authorId,
-      'Content-Type': 'text/plain;charset=UTF-8',
+      'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     });
-
-    return this.httpClient
+  
+    this.httpClient
       .put<FinancialProductsModel>(
-        `${this.baseURL}${financialProduct.id}`, // Asegúrate de tener el ID correcto aquí
-        financialProduct,
+        `${this.apiBaseBP}/bp/products/`,
+        productoFinancieroDTO,
         { headers }
       )
       .pipe(
@@ -66,23 +65,26 @@ export class FinancialProductService {
       )
       .subscribe();
   }
-
+  
   deleteProductoFinanciero(id: string) {
     const headers = new HttpHeaders({
       authorId: this.authorId,
-      'Content-Type': 'text/plain;charset=UTF-8',
+      'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*'
     });
-
-    return this.httpClient
+  
+    this.httpClient
       .delete(
-        `${this.baseURL}/${id}`,
-        { headers }
+        `${this.apiBaseBP}/bp/products/`,
+        { headers, params: { id } }
       )
       .pipe(
-        finalize(() => this.financialProductsListService.refetchListado()),
+        finalize(() =>
+          this.financialProductsListService.refetchListado()
+        ),
         catchError(() => of(EMPTY))
       )
       .subscribe();
   }
+  
 }
