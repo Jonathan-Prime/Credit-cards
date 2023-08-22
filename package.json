@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "preinstall": "npm link @angular/cli ",
-    "heroku-postbuild": "ng build --prod",
+    "heroku-postbuild": "ng build",
     "postinstall": "",
     "ng": "ng",
     "start": "node server.js",
