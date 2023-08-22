@@ -1,0 +1,10 @@
+<!-- <div class="container"> -->
+  <app-header-listado-productos-financieros/>
+  <app-tabla-listado-productos-financieros
+    [listadoProductosFinancieros$]="listadoProductosFinancieros$"
+    [searchString$]="searchString$"
+  ></app-tabla-listado-productos-financieros>
+  <app-footer-listado-productos-financieros
+    [totalResults]="this.currentResultLength$"
+  />
+<!-- </div> -->

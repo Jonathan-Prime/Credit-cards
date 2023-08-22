@@ -1,14 +1,14 @@
 header {
   display: flex;
-  height: auto;
+  height: 80px;
   background-color: var(--white);
   justify-content: center;
 }
 
 main {
   display: flex;
+  border-radius: 5px;
   min-height: calc(100vh - 80px);
-  background: var(--background-gray);
 }
 
 img {

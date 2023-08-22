@@ -1,0 +1,8 @@
+<div class="table-footer">
+  <div class="container">
+    <div *ngIf="(totalResults|async) as total">
+      <p>{{total}} {{total !== 1 ? 'Resultados' : 'Resultado'}}</p>
+    </div>
+    <app-paginador-listado-productos-financieros/>
+  </div>
+</div>

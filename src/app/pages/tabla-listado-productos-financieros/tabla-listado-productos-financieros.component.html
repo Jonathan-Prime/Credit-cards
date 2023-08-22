@@ -1,0 +1,46 @@
+<div class="tabla-listado-productos-financieros">
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <p>Logo</p>
+          </th>
+          <th>
+            <p>Nombre del producto<span class="material-symbols-outlined inline-icon">info</span></p>
+          </th>
+          <th>
+            <p>Descripción<span class="material-symbols-outlined inline-icon">info</span></p>
+          </th>
+          <th>
+            <p>Fecha de liberación<span class="material-symbols-outlined inline-icon">info</span></p>
+          </th>
+          <th>
+            <p>Fecha de reestructuración<span class="material-symbols-outlined inline-icon">info</span></p>
+          </th>
+          <th>
+            <div class="menu-contextual"></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let producto of listadoProductosFinancieros$|async|searchListFinancialProducts:(searchString$|async) ?? '' ">
+          <td>
+            <app-producto-financiero-imagen-listado
+              imagenSrc="{{producto.logo}}"
+            />
+          </td>
+          <td>{{producto.name}}</td>
+          <td>{{producto.description}}</td>
+          <td>{{producto.dateRelease|date:'d/M/yy'}}</td>
+          <td>{{producto.dateRevision|date:'d/M/yy'}}</td>
+          <td>
+            <span appMenuFlotante [data]="producto" role="button" class="material-symbols-outlined v-dots">
+            more_vert
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

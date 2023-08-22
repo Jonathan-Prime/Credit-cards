@@ -11,7 +11,7 @@ button {
   &.yellow {
     background: var(--yellow);
     &:is(:disabled) {
-      background-color: lighten(var(--yellow), 10);
+      background-color: var(--yellow)
     }
   }
 }
@@ -19,7 +19,7 @@ button {
   &.gray {
     background: var(--gray);
     &:is(:disabled) {
-      background-color: lighten(var(--gray), 90);
+      background-color: var(--gray)
     }
   }
 }

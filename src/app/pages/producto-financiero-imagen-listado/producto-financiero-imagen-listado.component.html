@@ -1,0 +1,10 @@
+<div class="placeholder" *ngIf="!imagenSrc">
+  <p>img</p>
+</div>
+<img 
+  *ngIf="imagenSrc" 
+  [src]="imagenSrc" 
+  alt="logo producto financiero"
+  height="45px"
+  width="45px"
+/>

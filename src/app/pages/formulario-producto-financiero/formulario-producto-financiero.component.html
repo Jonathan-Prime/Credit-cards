@@ -1,0 +1,69 @@
+<header>
+  <h1>Formulario de registro</h1>
+</header>
+<form [formGroup]="formularioProductoFinanciero" (ngSubmit)="submit()">
+  <div class="form-row">
+    <div>
+      <label>ID</label>
+      <input formControlName="id"/>
+      <app-input-error-box
+        *ngIf="this.formularioProductoFinanciero.get('id')?.touched"
+        [error]="this.formularioProductoFinanciero.get('id')?.errors"
+      ></app-input-error-box>
+    </div>
+    <div>
+      <label>Nombre</label>
+      <input formControlName="name"/>
+      <app-input-error-box
+        *ngIf="this.formularioProductoFinanciero.get('name')?.touched"
+        [error]="this.formularioProductoFinanciero.get('name')?.errors"
+      ></app-input-error-box>
+    </div>
+  </div>
+  <div class="form-row">
+    <div>
+      <label>Descripción</label>
+      <input formControlName="description"/>
+      <app-input-error-box
+        *ngIf="this.formularioProductoFinanciero.get('description')?.touched"
+        [error]="this.formularioProductoFinanciero.get('description')?.errors"
+      ></app-input-error-box>
+    </div>
+    <div>
+      <label>Logo</label>
+      <input formControlName="logo"/>
+      <app-input-error-box
+        *ngIf="this.formularioProductoFinanciero.get('logo')?.touched"
+        [error]="this.formularioProductoFinanciero.get('logo')?.errors"
+      ></app-input-error-box>
+    </div>
+  </div>
+  <div class="form-row">
+    <div>
+      <label>Fecha liberación</label>
+      <input formControlName="dateRelase" type="date"/>
+      <app-input-error-box
+        *ngIf="this.formularioProductoFinanciero.get('dateRelase')?.touched"
+        [error]="this.formularioProductoFinanciero.get('dateRelase')?.errors"
+      ></app-input-error-box>
+    </div>
+    <div>
+      <label>Fecha revisión</label>
+      <input formControlName="dateRevision" type="date"/>
+    </div>
+  </div>
+  <div class="form-footer">
+    <app-boton-generico
+      (click)="formularioProductoFinanciero.reset()"
+      buttonText="Reiniciar"
+      buttonBgColor="gray"
+      buttonType="button"
+    />
+    <app-boton-generico
+      [disabled]="formularioProductoFinanciero.invalid"
+      buttonText="Enviar"
+      buttonBgColor="yellow"
+      buttonType="submit"
+    />
+  </div>
+</form>

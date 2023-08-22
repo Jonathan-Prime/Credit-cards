@@ -3,11 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-banco-pichincha": {
+    "banco-pichincha": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "standalone": true
         },
         "@schematics/angular:pipe": {
           "standalone": true
@@ -23,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-banco-pichincha",
+            "outputPath": "dist/banco-pichincha",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -71,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "test-banco-pichincha:build:production"
+              "browserTarget": "banco-pichincha:build:production"
             },
             "development": {
-              "browserTarget": "test-banco-pichincha:build:development"
+              "browserTarget": "banco-pichincha:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-banco-pichincha:build"
+            "browserTarget": "banco-pichincha:build"
           }
         },
         "test": {

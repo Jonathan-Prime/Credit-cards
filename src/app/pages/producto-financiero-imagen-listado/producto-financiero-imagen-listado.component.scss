@@ -1,0 +1,16 @@
+.placeholder,
+img {
+  background: #bfc1c5;
+  border-radius: 50%;
+  display: block;
+}
+.placeholder {
+  color: white;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  width: 45px;
+  p {
+    margin: 0;
+  }
+}
