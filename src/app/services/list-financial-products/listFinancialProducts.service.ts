@@ -9,6 +9,9 @@ import { environment } from 'src/app/environments/environment';
   providedIn: 'root',
 })
 export class ListadoProductosFinancierosService {
+  private authorId = `${environment.authorId}`;
+  private apiBaseBP = `${environment.apiBaseBP}`;
+
   currentResultLength$;
   listadoProductosFiancieros$;
   searchString$;
@@ -17,8 +20,6 @@ export class ListadoProductosFinancierosService {
   private getListadoProductosFinancieros$;
   private listadoProductosFiancieros;
   private searchString;
-  private authorId = `${environment.authorId}`;
-  private apiBaseBP = `${environment.apiBaseBP}`;
 
   constructor(private httpClient: HttpClient) {
     this.listadoProductosFiancieros = new Subject<FinancialProduct[]>();

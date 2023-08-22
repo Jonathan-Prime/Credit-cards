@@ -1,4 +1,4 @@
-<div class="tabla-listado-productos-financieros">
+<div class="table">
   <div class="table-wrapper">
     <table>
       <thead>
@@ -7,16 +7,16 @@
             <p>Logo</p>
           </th>
           <th>
-            <p>Nombre del producto<span class="material-symbols-outlined inline-icon">info</span></p>
+            <p>Nombre del producto<span class="bx bxs-info-circle inline-icon"></span></p>
           </th>
           <th>
-            <p>Descripción<span class="material-symbols-outlined inline-icon">info</span></p>
+            <p>Descripción<span class="bx bxs-info-circle inline-icon"></span></p>
           </th>
           <th>
-            <p>Fecha de liberación<span class="material-symbols-outlined inline-icon">info</span></p>
+            <p>Fecha de liberación<span class="bx bxs-info-circle inline-icon"></span></p>
           </th>
           <th>
-            <p>Fecha de reestructuración<span class="material-symbols-outlined inline-icon">info</span></p>
+            <p>Fecha de reestructuración<span class="bx bxs-info-circle inline-icon"></span></p>
           </th>
           <th>
             <div class="menu-contextual"></div>
@@ -24,11 +24,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let financial of listadoProductosFinancieros$|async|searchListFinancialProducts:(searchString$|async) ?? '' ">
+        <tr
+          *ngFor="let financial of listadoProductosFinancieros$|async|searchListFinancialProducts:(searchString$|async) ?? '' ">
           <td>
-            <app-producto-financiero-imagen-listado
-              imagenSrc="{{financial.logo}}"
-            />
+            <app-producto-financiero-imagen-listado imagenSrc="{{financial.logo}}" />
           </td>
           <td>{{financial.name}}</td>
           <td>{{financial.description}}</td>
@@ -36,7 +35,7 @@
           <td>{{financial.dateRevision|date:'d/M/yy'}}</td>
           <td>
             <span appMenuFlotante [data]="financial" role="button" class="material-symbols-outlined v-dots">
-            more_vert
+              more_vert
             </span>
           </td>
         </tr>

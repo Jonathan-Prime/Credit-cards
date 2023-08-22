@@ -1,6 +1,12 @@
 :host {
   box-sizing: border-box;
   display: block;
-  padding: 80px 60px;
+  padding: 40px 60px;
   width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  :host {
+    padding: 5px;
+  }
 }

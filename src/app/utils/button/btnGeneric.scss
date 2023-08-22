@@ -6,18 +6,20 @@ button {
   font-weight: 700;
   height: 50px;
   width: 90px;
+  color: var(--blue)
 }
 button {
   &.yellow {
     background: var(--yellow);
     &:is(:disabled) {
-      background-color: var(--yellow)
+      background-color: var(--yellow_opacity);
+      cursor: not-allowed;
     }
   }
 }
 button {
   &.gray {
-    background: var(--gray);
+    background: var(--background-color);
     &:is(:disabled) {
       background-color: var(--gray)
     }

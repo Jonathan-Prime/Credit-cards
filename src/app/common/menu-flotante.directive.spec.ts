@@ -1,7 +1,7 @@
 import { MenuFlotanteDirective } from './menu-flotante.directive';
 import { ComponentRef, ViewContainerRef } from '@angular/core';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { MenuFlotanteListadoProductosFinancierosComponent } from '../pages/menu-flotante-listado-productos-financieros/menu-flotante-listado-productos-financieros.component';
+import { MenuFlotanteListadoProductosFinancierosComponent } from '../pages/flotant-menu/menu-flotante-listado-productos-financieros.component';
 import { provideHttpClient } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 describe('MenuFlotanteDirective', () => {

@@ -30,11 +30,13 @@
 }
 
 :root {
-    --background-color: #e0e0e0;
+    --background-color: #f4f6f9;
     --color-font: #2b2b2b;
     --white: #fff;
-    --gray: #e0e0e0;
-    --yellow: #f7da35;
+    --gray: #8a8e92 /* Color corporative manual */;
+    --yellow: #fbd800 /* Color corporative manual */;
+    --yellow_opacity: #fbd90096;
+    --blue: #2e3673 /* Color corporative manual */;
 }
 
 h1 {
@@ -51,7 +53,7 @@ body {
     margin: 0;
     font-family: 'Prelo-Medium';
     font-weight: 400;
-    background-color: var(--white) !important;
+    background-color: var(--background-color) !important;
     font-size: 13px !important;
     color: var(--color-font) !important;
 }
@@ -117,22 +119,6 @@ small {
     font-size: 80%;
 }
 
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sub {
-    bottom: -0.25em;
-}
-
-sup {
-    top: -0.5em;
-}
-
 img {
     border-style: none;
 }
@@ -155,13 +141,11 @@ textarea {
 
 button,
 input {
-    /* 1 */
     overflow: visible;
 }
 
 button,
 select {
-    /* 1 */
     text-transform: none;
 }
 
@@ -191,27 +175,6 @@ button:-moz-focusring,
 
 fieldset {
     padding: 0.35em 0.75em 0.625em;
-}
-
-
-legend {
-    box-sizing: border-box;
-    /* 1 */
-    color: inherit;
-    /* 2 */
-    display: table;
-    /* 1 */
-    max-width: 100%;
-    /* 1 */
-    padding: 0;
-    /* 3 */
-    white-space: normal;
-    /* 1 */
-}
-
-
-progress {
-    vertical-align: baseline;
 }
 
 textarea {
@@ -249,10 +212,6 @@ textarea {
 
 details {
     display: block;
-}
-
-summary {
-    display: list-item;
 }
 
 

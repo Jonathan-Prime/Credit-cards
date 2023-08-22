@@ -120,7 +120,7 @@ describe('EditarProductoFinancieroComponent valid id', () => {
     };
     component.updateProductoFinanciero(productoFinancieroMock);
     expect(
-      productoFinancieroService.updateFinancialProduct
+      productoFinancieroService.updateProductoFinanciero
     ).toHaveBeenCalled();
   });
 

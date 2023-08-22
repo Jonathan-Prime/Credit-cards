@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormularioProductoFinancieroComponent } from '../formulario-producto-financiero/formulario-producto-financiero.component';
+import { FormularioProductoFinancieroComponent } from '../form-financial-product/formulario-producto-financiero.component';
 import { Subscription, map, take, tap } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ListadoProductosFinancierosService } from '../../services/list-financial-products/listFinancialProducts.service';

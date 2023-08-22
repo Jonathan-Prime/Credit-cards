@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener, Input, ViewContainerRef } from '@angular/core';
-import { MenuFlotanteListadoProductosFinancierosComponent } from '../pages/menu-flotante-listado-productos-financieros/menu-flotante-listado-productos-financieros.component';
+import { MenuFlotanteListadoProductosFinancierosComponent } from '../pages/flotant-menu/menu-flotante-listado-productos-financieros.component';
 import { FinancialProduct } from '../utils/format-date/formatDate';
 @Directive({
   selector: '[appMenuFlotante]',

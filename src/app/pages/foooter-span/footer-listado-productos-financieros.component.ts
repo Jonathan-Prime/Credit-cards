@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginadorListadoProductosFinancierosComponent } from '../paginador-listado-productos-financieros/paginador-listado-productos-financieros.component';
+import { PaginadorListadoProductosFinancierosComponent } from '../pagination/paginador-listado-productos-financieros.component';
 import { Observable, of } from 'rxjs';
 
 @Component({

@@ -51,10 +51,10 @@ describe('CrearProductoFinancieroComponent', () => {
   });
 
   it('should call createProductoFinanciero on the service', () => {
-    productoFinancieroService.createFinancialProduct(productoFinancieroMock);
+    productoFinancieroService.createProductoFinanciero(productoFinancieroMock);
     component.addNewProduct(productoFinancieroMock);
     expect(
-      productoFinancieroService.createFinancialProduct
+      productoFinancieroService.createProductoFinanciero
     ).toHaveBeenCalledWith(productoFinancieroMock);
   });
 });

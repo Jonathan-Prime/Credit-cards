@@ -47,7 +47,7 @@ describe('MenuFlotanteListadoProductosFinancierosComponent', () => {
     component.data = productoFinancieroMock;
     component.deleteProducto();
     expect(
-      productoFinancieroService.deleteFinancialProduct
+      productoFinancieroService.deleteProductoFinanciero
     ).toHaveBeenCalled();
   });
 });

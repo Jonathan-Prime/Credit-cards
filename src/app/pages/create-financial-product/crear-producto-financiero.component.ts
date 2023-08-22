@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormularioProductoFinancieroComponent } from '../formulario-producto-financiero/formulario-producto-financiero.component';
+import { FormularioProductoFinancieroComponent } from '../form-financial-product/formulario-producto-financiero.component';
 import { FinancialProductService } from '../../services/financial-products/financialProducts.service';
 import { FinancialProductsModel } from '../../types/financialProduct';
 

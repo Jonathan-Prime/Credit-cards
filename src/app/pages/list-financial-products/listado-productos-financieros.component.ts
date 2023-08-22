@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderListadoProductosFinancierosComponent } from '../header-listado-productos-financieros/header-listado-productos-financieros.component';
-import { TablaListadoProductosFinancierosComponent } from '../tabla-listado-productos-financieros/tabla-listado-productos-financieros.component';
+import { HeaderListadoProductosFinancierosComponent } from '../header-list-financial-product/header-listado-productos-financieros.component';
+import { TableListComponent } from '../table-list/table-list.component';
 import { ListadoProductosFinancierosService } from '../../services/list-financial-products/listFinancialProducts.service';
-import { FooterListadoProductosFinancierosComponent } from '../footer-listado-productos-financieros/footer-listado-productos-financieros.component';
+import { FooterListadoProductosFinancierosComponent } from '../foooter-span/footer-listado-productos-financieros.component';
 
 @Component({
   selector: 'app-listado-productos-financieros',
@@ -13,7 +13,7 @@ import { FooterListadoProductosFinancierosComponent } from '../footer-listado-pr
   imports: [
     CommonModule,
     HeaderListadoProductosFinancierosComponent,
-    TablaListadoProductosFinancierosComponent,
+    TableListComponent,
     FooterListadoProductosFinancierosComponent,
   ],
 })

@@ -1,23 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { TablaListadoProductosFinancierosComponent } from './tabla-listado-productos-financieros.component';
+import { TableListComponent } from './table-list.component';
 import { provideHttpClient } from '@angular/common/http';
 import { FinancialProduct } from '../../utils/format-date/formatDate';
 import { of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 
-describe('TablaListadoProductosFinancierosComponent', () => {
-  let component: TablaListadoProductosFinancierosComponent;
-  let fixture: ComponentFixture<TablaListadoProductosFinancierosComponent>;
+describe('TableListComponent', () => {
+  let component: TableListComponent;
+  let fixture: ComponentFixture<TableListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TablaListadoProductosFinancierosComponent],
+      imports: [TableListComponent],
       providers: [provideHttpClient()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(
-      TablaListadoProductosFinancierosComponent
+      TableListComponent
     );
     component = fixture.componentInstance;
     fixture.detectChanges();

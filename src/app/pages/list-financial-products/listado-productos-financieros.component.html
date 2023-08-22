@@ -1,9 +1,9 @@
 <!-- <div class="container"> -->
   <app-header-listado-productos-financieros/>
-  <app-tabla-listado-productos-financieros
+  <app-table-list
     [listadoProductosFinancieros$]="listadoProductosFinancieros$"
     [searchString$]="searchString$"
-  ></app-tabla-listado-productos-financieros>
+  ></app-table-list>
   <app-footer-listado-productos-financieros
     [totalResults]="this.currentResultLength$"
   />
