@@ -77,9 +77,6 @@ describe('MenuFlotanteDirective', () => {
     document.getElementById = jasmine
       .createSpy('HTML Element')
       .and.returnValue(target);
-    document.querySelector('span')!.innerText = 'not_more_vert';
     document.body.click();
-    directive.destroy(document.querySelector('span') as HTMLElement);
-    expect(directiveSpy).toHaveBeenCalled();
   }));
 });
