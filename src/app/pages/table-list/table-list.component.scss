@@ -66,7 +66,7 @@ tr {
   td {
     align-items: center;
     display: flex;
-    flex-basis: 22.5%;
+    flex-basis: calc(30% - 120px);
     flex-grow: 0;
     flex-shrink: 0;
     padding: 0px 5px 0px 5px;
@@ -88,6 +88,29 @@ tr {
   }
 }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  background-color: var(--light-gray); /* Cambia el fondo del encabezado */
+}
+
+@media (max-width: 600px) {
+  th,
+  td {
+    display: block;
+    width: 100%;
+  }
+}
+
+
 .inline-icon {
   font-size: 18px !important;
   margin-left: 5px;
@@ -99,8 +122,8 @@ span .v-dots {
 }
 
 .v-dots {
-  color: var(--background-color);
-  font-variation-settings: 'wght' 700;
+  color: var(--gray);
+  font-size: 20px;
 
   &:hover {
     cursor: pointer;

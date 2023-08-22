@@ -12,8 +12,8 @@ describe('ListadoProductosFinancierosService', () => {
   let controller: HttpTestingController;
   let responsePlaceholder: FinancialProductsModel[] = [
     {
-      id: 'product-123',
-      name: 'Tarjeta de Crédito Oro',
+      id: 'card-123',
+      name: 'Tarjeta de Crédito',
       description: 'Una tarjeta de crédito premium con amplios beneficios.',
       logo: 'logo-tarjeta-oro.png',
       date_release: '2023-01-15T00:00:00.000+00:00',

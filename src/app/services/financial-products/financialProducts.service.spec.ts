@@ -2,12 +2,12 @@ import { TestBed } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { HttpTestingController, provideHttpClientTesting } from '@angular/common/http/testing';
 
-import { FinancialProductsListService } from '../list-financial-products/listFinancialProducts.service';
+import { ListadoProductosFinancierosService } from '../list-financial-products/listFinancialProducts.service';
 import { FinancialProductService } from './financialProducts.service';
 
 describe('FinancialProductService', () => {
   let controller: HttpTestingController;
-  let financialProductsListServiceSpy: FinancialProductsListService;
+  let financialProductsListServiceSpy: ListadoProductosFinancierosService;
   let routerSpy: Router;
   let financialProductService: FinancialProductService;
 
@@ -31,7 +31,7 @@ describe('FinancialProductService', () => {
       providers: [
         provideHttpClientTesting(),
         {
-          provide: FinancialProductsListService,
+          provide: ListadoProductosFinancierosService,
           useValue: financialProductsListServiceSpyObj,
         },
         {
@@ -41,7 +41,7 @@ describe('FinancialProductService', () => {
       ],
     });
 
-    financialProductsListServiceSpy = TestBed.inject(FinancialProductsListService);
+    financialProductsListServiceSpy = TestBed.inject(ListadoProductosFinancierosService);
     controller = TestBed.inject(HttpTestingController);
     financialProductService = TestBed.inject(FinancialProductService);
     routerSpy = TestBed.inject(Router);
@@ -52,78 +52,78 @@ describe('FinancialProductService', () => {
   });
 
   it('should create a new product successfully', () => {
-    financialProductService.createFinancialProduct(financialProductMock);
+    financialProductService.createProductoFinanciero(financialProductMock);
 
-    const req = controller.expectOne(`${financialProductService['baseURL']}`);
+    const req = controller.expectOne(`${financialProductService['apiBaseBP']+['/bp/products/']}`);
     expect(req.request.method).toEqual('POST');
     req.flush(financialProductMock);
     expect(
-      financialProductsListServiceSpy.refetchFinancialProducts
+      financialProductsListServiceSpy.refetchListado
     ).toHaveBeenCalled();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['']);
   });
 
   it('should handle service error when creating a new product', () => {
-    financialProductService.createFinancialProduct(financialProductMock);
-    const req = controller.expectOne(`${financialProductService['baseURL']}`);
+    financialProductService.createProductoFinanciero(financialProductMock);
+    const req = controller.expectOne(`${financialProductService['apiBaseBP']+['/bp/products/']}`);
     req.flush('Error', {
       status: 500,
       statusText: 'Internal Server Error',
     });
     expect(
-      financialProductsListServiceSpy.refetchFinancialProducts
+      financialProductsListServiceSpy.refetchListado
     ).toHaveBeenCalled();
     expect(routerSpy.navigate).toHaveBeenCalled();
   });
 
   it('should update product successfully', () => {
-    financialProductService.updateFinancialProduct(financialProductMock);
+    financialProductService.updateProductoFinanciero(financialProductMock);
 
-    const req = controller.expectOne(`${financialProductService['baseURL']}`);
+    const req = controller.expectOne(`${financialProductService['apiBaseBP']+['/bp/products/']}`);
     expect(req.request.method).toEqual('PUT');
     req.flush(financialProductMock);
     expect(
-      financialProductsListServiceSpy.refetchFinancialProducts
+      financialProductsListServiceSpy.refetchListado
     ).toHaveBeenCalled();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['']);
   });
 
   it('should handle service error when updating a product', () => {
-    financialProductService.updateFinancialProduct(financialProductMock);
-    const req = controller.expectOne(`${financialProductService['baseURL']}`);
+    financialProductService.updateProductoFinanciero(financialProductMock);
+    const req = controller.expectOne(`${financialProductService['apiBaseBP']+['/bp/products/']}`);
     req.flush('Error', {
       status: 500,
       statusText: 'Internal Server Error',
     });
     expect(
-      financialProductsListServiceSpy.refetchFinancialProducts
+      financialProductsListServiceSpy.refetchListado
     ).toHaveBeenCalled();
     expect(routerSpy.navigate).toHaveBeenCalled();
   });
 
   it('should delete product successfully', () => {
     const idPlaceholder = 'test-id';
-    financialProductService.deleteFinancialProduct(idPlaceholder);
+    financialProductService.deleteProductoFinanciero(idPlaceholder);
 
-    const req = controller.expectOne(`${financialProductService['baseURL']}?id=${idPlaceholder}`);
+    const req = controller.expectOne(`${financialProductService['apiBaseBP']+['/bp/products/']}?id=${idPlaceholder}`);
     expect(req.request.method).toEqual('DELETE');
     req.flush(financialProductMock);
     expect(
-      financialProductsListServiceSpy.refetchFinancialProducts
+      financialProductsListServiceSpy.refetchListado
     ).toHaveBeenCalled();
   });
 
   it('should handle service error when deleting a product', () => {
     const idPlaceholder = 'test-id';
-    financialProductService.deleteFinancialProduct(idPlaceholder);
+    financialProductService.deleteProductoFinanciero(idPlaceholder);
 
-    const req = controller.expectOne(`${financialProductService['baseURL']}?id=${idPlaceholder}`);
+    const req = controller.expectOne(`${financialProductService['apiBaseBP']+['/bp/products/']}?id=${idPlaceholder}`);
     req.flush('Error', {
       status: 500,
       statusText: 'Internal Server Error',
     });
     expect(
-      financialProductsListServiceSpy.refetchFinancialProducts
+      financialProductsListServiceSpy.refetchListado
     ).toHaveBeenCalled();
   });
 

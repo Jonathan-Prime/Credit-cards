@@ -17,14 +17,7 @@ export class MenuFlotanteDirective {
       this.unloadComponent();
     }
   }
-  @HostListener('document:click', ['$event.target']) destroy(
-    event: EventTarget
-  ) {
-    if ((event as HTMLElement).innerText !== 'more_vert' && this.elementRef) {
-      this.elementRef = undefined;
-      this.unloadComponent();
-    }
-  }
+
 
   @Input() data: FinancialProduct | undefined;
   elementRef: ElementRef<any> | undefined;
